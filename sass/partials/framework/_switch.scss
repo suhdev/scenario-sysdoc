@@ -1,0 +1,76 @@
+.of-switch{
+    @extend %box;
+    @extend %clearfix;
+    position:relative;
+    line-height: 2.6em;
+    height:2.6em;
+    margin-left:2px;
+    display:inline-block;
+
+    .of-switch-state{
+        @extend %box;
+        line-height: 2.6em;
+        height:2.6em;
+        text-align:center;
+        padding:0px 10px;
+        display:inline-block;
+        background:$color-1;
+        cursor:pointer;
+        width:80px;
+
+        & + .of-switch-state{
+            margin-left:2px;
+        }
+    }
+
+    &:before{
+        position:absolute;
+        left:0px;
+        top:0px;
+        height:2.6em;
+        margin-top:-2px;
+        margin-left:-2px;
+        width:80px;
+        border:2px solid $color-3;
+        content:' ';
+        display:block;
+        -webkit-transition: transform 0.5s cubic-bezier(0,0,0,1);
+        -o-transition: transform 0.5s cubic-bezier(0,0,0,1);
+        transition: transform 0.5s cubic-bezier(0,0,0,1);
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        // z-index:-1;
+    }
+
+    @for $i from 0 through 10{
+        &[data-state="#{$i}"]:before{
+            -webkit-transform: translate($i * 82px,0px);
+            -ms-transform: translate($i * 82px,0px);
+            -o-transform: translate($i * 82px,0px);
+            transform: translate($i * 82px,0px);
+        }
+
+    }
+
+
+    @each $type in $control-types {
+		$idx:index($control-types, $type);
+		&.#{$type} {
+            .of-switch-state{
+                background:nth($control-colors, $idx);
+                color:white;
+
+                &:hover{
+                    background:lighten(nth($control-colors, $idx),15%);
+                }
+
+                &:active,&.active{
+                    background:darken(nth($control-colors, $idx),10%);
+                }
+
+            }
+		}
+	}
+}

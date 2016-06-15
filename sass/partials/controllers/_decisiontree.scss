@@ -1,0 +1,45 @@
+#DecisionTree{
+	padding: 1.5em 0.5em;
+	padding-top: 90px;
+	.sysdoc-logo{
+		position:absolute;
+		left:15px;
+		display:block;
+		cursor:pointer;
+		top:15px;
+		width:150px;
+		img{
+			width:100%;
+			height:auto;
+		}
+	}
+	.tree-heading{
+		font-size:20px;
+		line-height:1.3em;
+		margin-bottom:10px;
+	}
+
+	.of-card{
+		display:none;
+		padding: 2em 1.5em;
+	}
+	
+
+	@for $i from 0 through 10 {
+		&[data-card="#{$i}"] .of-card[data-index="#{$i}"]{
+			display:block;
+		}
+
+	}
+
+	#footer{
+		margin: 50px -0.5em 1.5em;
+	}
+	@include SmallDevice(){
+		padding:1.5em;
+		#footer{
+			margin: 50px -1.5em 1.5em;
+		}
+	}
+
+}

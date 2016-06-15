@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for es6/controllers/DecisionTree/Reducer.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">es6/controllers/DecisionTree/</a> Reducer.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>49/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.46% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>23/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.87% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>46/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { DECISION_TREE_START as START, START_MASK, ROLES } from '../../constants';
+import { TYPES } from './Actions';
+export function Reducer(state, action) {
+    let newState = state;
+    let v = START_MASK &amp; action.type;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (v === START) {
+        switch (action.type) {
+<span class="branch-0 cbranch-no" title="branch not covered" >            case TYPES.INIT:</span>
+<span class="cstat-no" title="statement not covered" >                break;</span>
+            case TYPES.REQUIRES_BRAND:
+                newState = newState.withMutations((m) =&gt; {
+                    return m.set('level', action.data);
+                });
+                break;
+            case TYPES.STAFF_LOADED:
+                newState = newState.withMutations((m) =&gt; {
+                    return m.set('staff', action.data);
+                });
+                break;
+            case TYPES.STRATEGIC:
+                newState = newState.withMutations((m) =&gt; {
+                    return m.set('strategic', action.data);
+                });
+                break;
+            case TYPES.COMPLEXITY:
+                newState = newState.withMutations((m) =&gt; {
+                    return m.set('complexity', action.data);
+                });
+                break;
+            case TYPES.VALUE:
+                newState = newState.withMutations((m) =&gt; {
+                    return m.set('value', action.data);
+                });
+                break;
+            case TYPES.NEXT_CARD:
+                newState = newState.withMutations((m) =&gt; {
+                    let v = newState.get('card');
+                    v += 1;
+                    return m.set('card', v);
+                });
+                break;
+            case TYPES.PREV_CARD:
+                newState = newState.withMutations((m) =&gt; {
+                    let v = newState.get('card');
+                    v -= 1;
+                    return m.set('card', v);
+                });
+                break;
+            case TYPES.FINISH:
+                newState = newState.withMutations((m) =&gt; {
+                    let staff = m.get('staff'), isBrand = m.get('level') &gt; 0, isStrategic = m.get('strategic') &gt; 0, value = m.get('value'), complexity = m.get('complexity');
+                    let technical = null, brand = null, roles = [];
+                    if (isStrategic || (value &gt;= 1 &amp;&amp; complexity &gt; 1) || (value &gt; 1 <span class="branch-4 cbranch-no" title="branch not covered" >&amp;&amp; complexity &gt;=</span> 1)) {
+                        technical = ROLES.HEAD_OF_TECHNICAL;
+                    }
+                    if (!technical) {
+                        if (value === 0 &amp;&amp; complexity === 0) {
+                            technical = ROLES.TECHNICAL;
+                        }
+                        else {
+                            technical = ROLES.SENIOR_TECHNICAL;
+                        }
+                    }
+                    brand = isBrand ? ((technical &amp; 0x0F) | 0x20) : null;
+                    roles = [technical, brand];
+                    m.set('filteredStaff', staff.filter((e) =&gt; {
+                        return roles.indexOf(e.role) !== -1;
+                    })).set('card', 4);
+                });
+                break;
+        }
+    }
+    return newState;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jun 15 2016 19:29:32 GMT+0100 (BST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
