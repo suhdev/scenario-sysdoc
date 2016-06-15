@@ -100,7 +100,7 @@ export class DecisionTree extends ControllerView<DecisionTreeProps,DecisionTreeS
     }
 
     /**
-     * (description)
+     * Called when the strategic
      * 
      * @param {*} e (description)
      */
@@ -109,7 +109,7 @@ export class DecisionTree extends ControllerView<DecisionTreeProps,DecisionTreeS
     }
 
     /**
-     * (description)
+     * Called after the component's first render. 
      */
     componentDidMount(){
         super.componentDidMount();
@@ -117,18 +117,7 @@ export class DecisionTree extends ControllerView<DecisionTreeProps,DecisionTreeS
         this.props.store.combiner.addReducer(STATE_KEY,Reducer); 
     }
 
-    /**
-     * (description)
-     * 
-     * @returns (description)
-     */
     render(){
-        /**
-         * (description)
-         * 
-         * @param e (description)
-         * @returns (description)
-         */
         let staff = this.state.filteredStaff.map((e)=>{
             return {
                 key:e.name,
