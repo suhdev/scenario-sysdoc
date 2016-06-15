@@ -1,6 +1,17 @@
+//The file contains the DecisionTree controller's Reducer. 
 import {Action} from 'strikejs'; 
 import {DECISION_TREE_START as START,START_MASK,ROLES} from '../../constants'; 
 import {TYPES} from './Actions';
+
+/**
+ * Given the current state of the DecisionTree controller and an action, 
+ * the Reducer function creates the new state of the DecisionTree controller.   
+ * 
+ * @export
+ * @param {Immutable.Map<string,any>} state the current state
+ * @param {Action} action the action to respond to 
+ * @returns the new state of the DecisionTree controller. 
+ */
 export function Reducer(state:Immutable.Map<string,any>,action:Action){
     let newState = state;
     let v = START_MASK & action.type;  

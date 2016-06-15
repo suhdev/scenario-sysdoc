@@ -1,6 +1,6 @@
 import * as React from 'react';
 /**
- * (description)
+ * A stateless component representing the website's footer. 
  * 
  * @export
  * @interface FooterProps
@@ -36,11 +36,6 @@ export class Footer extends React.Component<FooterProps,any>{
         return false;
     }
 
-    /**
-     * (description)
-     * 
-     * @returns (description)
-     */
     render(){
         return (
             <footer id="footer">
