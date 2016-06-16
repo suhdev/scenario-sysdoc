@@ -18,7 +18,7 @@ import { STATE_KEY, DecisionTreeInitialState } from './StateAndProps';
  * @class DecisionTree
  * @extends {ControllerView<DecisionTreeProps, DecisionTreeState>}
  */
-export class DecisionTree extends ControllerView {
+export class DecisionTreeCtrl extends ControllerView {
     /**
      * Creates an instance of DecisionTree.
      *
