@@ -38,7 +38,7 @@ Note: the `--skip-source-maps` flag is used due to an issue with JSPM source map
     * index.html: the final HTML file. 
 2. src: contains the source code files written in TypeScript. 
     * controllers: contains controller ReactJS components. Each of these components has its own action space, state space, and reducer in the application.  
-    * ui: stateless components that serve as the building blocks of the application. 
+    * views: stateless components that serve as the building blocks of the application. 
     * services: components that deal with third-party APIs, business logic, etc. 
     * contants.tsx: includes global constants used across the different components of the application. 
     * main.tsx: a file that serves as the entry point of the application and mainly responsible for bootstrapping the application.

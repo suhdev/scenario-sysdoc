@@ -1,5 +1,14 @@
 import { DECISION_TREE_START as START, START_MASK, ROLES } from '../../constants';
 import { TYPES } from './Actions';
+/**
+ * Given the current state of the DecisionTree controller and an action,
+ * the Reducer function creates the new state of the DecisionTree controller.
+ *
+ * @export
+ * @param {Immutable.Map<string,any>} state the current state
+ * @param {Action} action the action to respond to
+ * @returns the new state of the DecisionTree controller.
+ */
 export function Reducer(state, action) {
     let newState = state;
     let v = START_MASK & action.type;

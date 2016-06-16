@@ -1,4 +1,11 @@
 import * as React from 'react';
+/**
+ * (description)
+ *
+ * @export
+ * @class ListItem
+ * @extends {React.Component<ListItemProps, ListItemState>}
+ */
 export class ListItem extends React.Component {
     constructor(props) {
         super(props);
@@ -7,6 +14,11 @@ export class ListItem extends React.Component {
     }
     onClick(e) {
         this.props.onClick(this.props.userData, e);
+    }
+    shouldComponentUpdate(props) {
+        return props.label !== this.props.label ||
+            props.itemKey !== this.props.itemKey ||
+            props.userData !== this.props.userData;
     }
     render() {
         return (React.createElement("div", {className: "of-list-item", onClick: this.onClick}, this.props.label));

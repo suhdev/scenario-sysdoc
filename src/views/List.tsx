@@ -32,6 +32,12 @@ export class ListItem extends React.Component<ListItemProps,ListItemState>{
         this.props.onClick(this.props.userData,e);
     }
 
+    shouldComponentUpdate(props:ListItemProps){
+        return props.label !== this.props.label ||
+            props.itemKey !== this.props.itemKey ||
+            props.userData !== this.props.userData;
+    }
+
     render(){
         return (
             <div className="of-list-item" onClick={this.onClick}>{this.props.label}</div>

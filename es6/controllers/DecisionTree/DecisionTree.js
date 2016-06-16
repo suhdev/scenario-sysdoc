@@ -11,7 +11,19 @@ import { Footer } from './Footer';
 import { SubFooter } from './SubFooter';
 import { SOLUTION_TYPE_STATES, SOLUTION_VALUE_LEVELS } from '../../constants';
 import { STATE_KEY, DecisionTreeInitialState } from './StateAndProps';
+/**
+ * A stateful component that serves as the container of the application.
+ *
+ * @export
+ * @class DecisionTree
+ * @extends {ControllerView<DecisionTreeProps, DecisionTreeState>}
+ */
 export class DecisionTree extends ControllerView {
+    /**
+     * Creates an instance of DecisionTree.
+     *
+     * @param {DecisionTreeProps} props (description)
+     */
     constructor(props) {
         super(props, STATE_KEY);
         this.state = DecisionTreeInitialState;
@@ -24,29 +36,69 @@ export class DecisionTree extends ControllerView {
         this.onFinish = this.onFinish.bind(this);
         this.onMemberClick = this.onMemberClick.bind(this);
     }
+    /**
+     * This has been added in case extra functionality is required upon clicking on a member of staff.
+     *
+     * @param {*} e (description)
+     */
     onMemberClick(e) {
     }
+    /**
+     * Called when the user clicks on Finish. The method triggers the FINISH action,
+     * which performs the calculation and provides the final results.
+     */
     onFinish() {
         this.props.store.dispatch(ACTIONS.FINISH);
     }
-    onNextCard(e) {
+    /**
+     * Called when the next button is pressed.
+     *
+     */
+    onNextCard() {
         this.props.store.dispatch(ACTIONS.NEXT_CARD);
     }
-    onPrevCard(e) {
+    /**
+     * Called when the prev button is pressed.
+     *
+     */
+    onPrevCard() {
         this.props.store.dispatch(ACTIONS.PREV_CARD);
     }
+    /**
+     * Called when the value switch is changed.
+     *
+     * @param {number} e the index of the new value state.
+     */
     onValueChange(e) {
         this.props.store.dispatch(ACTIONS.VALUE(e));
     }
+    /**
+     * Called when the complexity switch is changed.
+     *
+     * @param {number} e the index of the new complexity state.
+     */
     onComplexityChange(e) {
         this.props.store.dispatch(ACTIONS.COMPLEXITY(e));
     }
+    /**
+     * Called when the brand requirement switch is changed.
+     *
+     * @param {number} e the index of the new brand requirement state.
+     */
     onSolutionTypeChange(e) {
         this.props.store.dispatch(ACTIONS.REQUIRES_BRAND(e));
     }
+    /**
+     * Called when the strategic
+     *
+     * @param {*} e (description)
+     */
     onStrategicChange(e) {
         this.props.store.dispatch(ACTIONS.STRATEGIC(e));
     }
+    /**
+     * Called after the component's first render.
+     */
     componentDidMount() {
         super.componentDidMount();
         this.props.store.replaceStateAt(STATE_KEY, Immutable.Map(DecisionTreeInitialState));

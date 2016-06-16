@@ -33,6 +33,12 @@ export class SwitchItem extends React.Component<SwitchItemProps,any>{
         this.props.onClick(this.props.index,this.props.itemKey);
     }
 
+    shouldComponentUpdate(props:SwitchItemProps){
+        return props.index !== this.props.index ||
+            props.itemKey !== this.props.itemKey ||
+            props.label !== this.props.label;
+    }
+
     render(){
         let e = this.props; 
         return (
@@ -53,6 +59,13 @@ export class Switch extends React.Component<SwitchProps,SwitchState>{
         this.setState({
             selState:nextProps.selState
         });
+    }
+
+    shouldComponentUpdate(props:SwitchProps,state:SwitchState){
+        return props.className !== this.props.className ||
+            props.selState !== this.props.selState ||
+            props.states !== this.props.states ||
+            state.selState !== this.state.selState;
     }
 
     render(){

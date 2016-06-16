@@ -39,38 +39,66 @@ export const ACTIONS = {
             data: staff
         };
     },
+    /**
+     * Triggered when the end user interaction switch state changes.
+     * @param {number} idx the index of the switch state.
+     */
     REQUIRES_BRAND: function (idx) {
         return {
             type: TYPES.REQUIRES_BRAND,
             data: idx
         };
     },
+    /**
+     * Triggered when the strategic switch state changes.
+     * @param {number} idx the index of the switch state.
+     */
     STRATEGIC: function (idx) {
         return {
             type: TYPES.STRATEGIC,
             data: idx
         };
     },
+    /**
+     * Triggered when the value switch state changes.
+     * @param {number} idx the index of the switch state.
+     */
     VALUE: function (idx) {
         return {
             type: TYPES.VALUE,
             data: idx,
         };
     },
+    /**
+     * Triggered when the complexity switch state changes.
+     * @param {number} idx the index of the switch state.
+     */
     COMPLEXITY: function (idx) {
         return {
             type: TYPES.COMPLEXITY,
             data: idx
         };
     },
+    /**
+     * Triggered when the user clicks on Next on any of the cards
+     * within the {DecisionTree} controller.
+     */
     NEXT_CARD: {
         type: TYPES.NEXT_CARD,
         data: {}
     },
+    /**
+      * Triggered when the user clicks on Prev on any of the cards
+      * within the {DecisionTree} controller.
+      */
     PREV_CARD: {
         type: TYPES.PREV_CARD,
         data: {}
     },
+    /**
+     * Triggered when the user clicks on Finish on the final card
+     * within the {DecisionTree} controller.
+     */
     FINISH: {
         type: TYPES.FINISH,
         data: {}
